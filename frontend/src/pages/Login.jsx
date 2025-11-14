@@ -12,7 +12,10 @@ export default function Login() {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/login", {
+      const API_URL = "https://smartstock-5.onrender.com"; 
+      // const API_URL = "http://localhost:5000"; // 🔧 Usar ao desenvolver localmente
+
+      const res = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
@@ -25,14 +28,12 @@ export default function Login() {
         return;
       }
 
-      // Salvar token no localStorage
       localStorage.setItem("token", data.token);
-      // Salvar usuário no localStorage para usar em telas como AlterarSenha
+
       if (data.user) {
         localStorage.setItem("usuarioLogado", JSON.stringify(data.user));
       }
 
-      // Redirecionar para Dashboard
       navigate("/dashboard");
     } catch (err) {
       setError("Erro de conexão com o servidor");
