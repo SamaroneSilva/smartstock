@@ -5,7 +5,6 @@ import Produtos from "./pages/Produtos";
 import Vendas from "./pages/Vendas";
 import Estoque from "./pages/Estoque";
 import Usuarios from "./pages/Usuarios";
-import AlterarSenha from "./pages/AlterarSenha";
 // OU, se salvou direto em pages:
 // import AlterarSenha from "./pages/AlterarSenha";
 
@@ -25,7 +24,6 @@ function App() {
         <Route path="/vendas" element={<Vendas />} />
         <Route path="/estoque" element={<Estoque />} />
         <Route path="/usuarios" element={<Usuarios />} />
-        <Route path="/alterar-senha" element={<AlterarSenha />} />
           </Routes>
     </Router>
   );

@@ -27,6 +27,10 @@ export default function Login() {
 
       // Salvar token no localStorage
       localStorage.setItem("token", data.token);
+      // Salvar usuário no localStorage para usar em telas como AlterarSenha
+      if (data.user) {
+        localStorage.setItem("usuarioLogado", JSON.stringify(data.user));
+      }
 
       // Redirecionar para Dashboard
       navigate("/dashboard");

@@ -52,6 +52,31 @@
 .mensagem.success { color: var(--color-success); }
 .mensagem.error { color: var(--color-danger); }
 
+/* Actions row: user badge + submit button */
+.form-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-top: 12px;
+}
+
+.usuario-badge {
+	display: inline-block;
+	padding: 8px 12px;
+	background: rgba(20,184,166,0.12);
+	color: var(--color-primary-600);
+	border-radius: 999px;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+	.form-actions { flex-direction: column-reverse; gap: 8px; }
+	.usuario-badge { width: 100%; text-align: center; }
+	.form-alterar-senha .btn { width: 100%; }
+}
+
 @media (max-width: 640px) {
 	.alterar-senha-page { padding: 30px 12px; }
 	.alterar-senha-container { padding: 18px; }
