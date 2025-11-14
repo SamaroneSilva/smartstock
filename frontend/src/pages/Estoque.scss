@@ -1,0 +1,91 @@
+/* Estoque.scss - versão SCSS do layout da página Estoque
+   Reutiliza as variáveis globais definidas em CSS (variables.css)
+*/
+
+.estoque-container {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: 90px;
+  padding-bottom: 60px;
+  padding-left: 24px;
+  padding-right: 24px;
+  background: linear-gradient(135deg, var(--color-bg), #cfe3f1);
+  font-family: var(--font-sans);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.estoque-titulo {
+  width: 100%;
+  max-width: 1100px;
+  box-sizing: border-box;
+  margin-bottom: 28px;
+  padding: 18px 20px;
+  color: var(--color-text);
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+  background: rgba(255,255,255,0.9);
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.estoque-conteudo-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  background: var(--color-surface);
+  border-radius: 14px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.tabela-responsiva-wrapper { overflow-x: auto; }
+
+.tabela-estoque {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.tabela-estoque thead {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-600));
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabela-estoque th,
+.tabela-estoque td {
+  padding: 14px 18px;
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  white-space: nowrap;
+}
+
+.tabela-estoque tbody tr:hover { background: #f6f9ff; }
+
+.sem-produtos {
+  text-align: center;
+  color: var(--color-muted);
+  font-size: 1.05rem;
+  padding: 60px 22px;
+}
+
+@media (max-width: 800px) {
+  .estoque-container { padding-top: 80px; padding-left: 12px; padding-right: 12px; }
+  .estoque-titulo { font-size: 1.6rem; padding: 12px; }
+  .tabela-estoque th, .tabela-estoque td { padding: 10px 12px; font-size: 0.95rem; }
+  .sem-produtos { padding: 40px 15px; }
+}
+
+@media (max-width: 600px) {
+  /* Allow table cells to wrap on very small screens and reduce padding */
+  .tabela-estoque th, .tabela-estoque td {
+    white-space: normal;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+  .tabela-responsiva-wrapper { overflow-x: auto; }
+}

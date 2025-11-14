@@ -1,0 +1,84 @@
+/* Usuarios.css - corrigido e padronizado com o layout global */
+
+/* A página usa o fundo do index.css, sem cor própria */
+.usuarios-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+  background: none; /* <--- REMOVE QUALQUER COR DE FUNDO */
+}
+
+/* Card branco centralizado */
+.usuarios-container {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 900px;
+  padding: 30px;
+  text-align: center;
+}
+
+/* Título */
+.usuarios-container h1 {
+  font-size: 1.8rem;
+  color: #2b2b2b;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Texto quando não há usuários */
+.sem-usuarios {
+  color: #666;
+  font-size: 1rem;
+  padding: 20px 0;
+}
+
+/* Container da tabela */
+.tabela-container {
+  overflow-x: auto;
+}
+
+/* Estilo da tabela */
+.tabela-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Cabeçalho */
+.tabela-usuarios th {
+  background: #4a90e2;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+}
+
+/* Células */
+.tabela-usuarios td {
+  padding: 12px;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+/* Linhas alternadas */
+.linha-par {
+  background-color: #f8faff;
+}
+
+.linha-impar {
+  background-color: #ffffff;
+}
+
+/* Efeito hover */
+.tabela-usuarios tr:hover {
+  background-color: #e7f0fd;
+  transition: 0.2s;
+}

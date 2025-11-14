@@ -1,0 +1,31 @@
+/* variables.css - cores, espaçamentos e tipografia reutilizáveis */
+:root {
+  /* Tipografia */
+  --font-sans: 'Segoe UI', Inter, system-ui, -apple-system, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif;
+  --base-font-size: 16px;
+
+  /* Cores - paleta mais suave e agradável */
+  --color-bg: #fbfdfe; /* fundo muito claro */
+  --color-surface: #ffffff; /* cards, modais */
+  --color-muted: #55657a; /* texto secundário mais ameno */
+  --color-text: #0b1220; /* texto principal levemente escuro */
+  --color-primary: #14b8a6; /* teal suave */
+  --color-primary-600: #0f766e; /* teal profundo */
+  --color-success: #16a34a;
+  --color-danger: #ef4444;
+
+  /* Elevations */
+  --shadow-sm: 0 6px 18px rgba(11, 20, 25, 0.06);
+  --shadow-md: 0 14px 40px rgba(11, 20, 25, 0.08);
+
+  /* Espaçamentos padrão */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+
+  /* Border radius */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+}

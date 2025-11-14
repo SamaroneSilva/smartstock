@@ -1,0 +1,62 @@
+/* AlterarSenha.scss - estilo padronizado usando variáveis e utilitários globais */
+.alterar-senha-page {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 16px;
+	background: transparent; /* fundo global em base.css */
+}
+
+.alterar-senha-container {
+	width: 100%;
+	max-width: 520px;
+	box-sizing: border-box;
+	padding: 28px 30px;
+	background: var(--color-surface);
+	border-radius: var(--radius-md);
+	box-shadow: var(--shadow-md);
+	border: 1px solid rgba(11,20,17,0.04);
+	margin: 0 auto;
+	text-align: left;
+}
+
+.alterar-senha-container h1 {
+	margin: 0 0 14px 0;
+	color: var(--color-text);
+	font-size: 1.5rem;
+	text-align: left;
+}
+
+.usuario-info { color: var(--color-muted); margin-bottom: 16px; text-align: left; }
+
+.form-alterar-senha {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	text-align: left;
+}
+
+.form-alterar-senha label { font-weight: 600; color: var(--color-text); }
+.form-alterar-senha input {
+	padding: 10px 12px;
+	border-radius: var(--radius-sm);
+	border: 1px solid rgba(11,20,17,0.06);
+	font-size: 1rem;
+	width: 100%;
+}
+
+.form-alterar-senha .btn { margin-top: 12px; align-self: center; min-width: 160px; }
+
+.mensagem { margin-top: 14px; font-weight: 600; text-align: left; }
+.mensagem.success { color: var(--color-success); }
+.mensagem.error { color: var(--color-danger); }
+
+@media (max-width: 640px) {
+	.alterar-senha-page { padding: 30px 12px; }
+	.alterar-senha-container { padding: 18px; }
+	.form-alterar-senha input { padding: 10px; }
+	.form-alterar-senha .btn { width: 100%; align-self: stretch; }
+	.usuario-info { text-align: left; }
+}
+

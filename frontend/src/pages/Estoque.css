@@ -1,0 +1,124 @@
+/*
+  REFORMULAÇÃO TOTAL DO CSS
+  Removemos todo z-index e position desnecessários.
+  O layout agora é controlado por padding e flexbox.
+*/
+
+/* 1. Container principal da página */
+.estoque-container {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box; /* Essencial para o padding funcionar */
+  
+  /* ESTA É A PARTE MAIS IMPORTANTE:
+    Este padding "empurra" todo o conteúdo para baixo.
+    Se o seu título AINDA estiver coberto, aumente este valor
+    (ex: 100px, 120px) até ele aparecer abaixo da sua barra de navegação.
+  */
+  padding-top: 90px; 
+  
+  /* Paddings para o resto da página */
+  padding-bottom: 60px;
+  padding-left: 24px;
+  padding-right: 24px;
+  
+  /* Fundo bonito */
+  background: linear-gradient(135deg, #f5f7fa, #cfe3f1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Centraliza o conteúdo na página */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+/* 2. Título da Página */
+.estoque-titulo {
+  /* O título agora é um bloco simples, sem z-index */
+  width: 100%;
+  max-width: 1100px; /* Limita a largura */
+  box-sizing: border-box;
+  margin-bottom: 28px; /* Espaço abaixo do título */
+  
+  padding: 18px 20px;
+  color: #1f2937;
+  font-size: 2.1rem;
+  font-weight: 700;
+  text-align: center;
+  
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+/* 3. Wrapper do Conteúdo (Tabela ou "Sem Produtos") */
+.estoque-conteudo-wrapper {
+  width: 100%;
+  max-width: 1100px; /* Mesma largura do título */
+  
+  /* Fundo branco e sombra */
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(11, 20, 40, 0.06);
+  overflow: hidden; /* Para o radius funcionar na tabela */
+}
+
+/* Wrapper para a tabela rolar em telas pequenas */
+.tabela-responsiva-wrapper {
+  overflow-x: auto; /* Permite rolar a tabela horizontalmente no mobile */
+}
+
+/* Tabela (Estilos mantidos) */
+.tabela-estoque {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  color: #333;
+}
+
+.tabela-estoque thead {
+  background: linear-gradient(90deg, #4a90e2, #357ab8);
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabela-estoque th,
+.tabela-estoque td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #eef2f6;
+  white-space: nowrap; /* Evita que o texto quebre */
+}
+
+.tabela-estoque tbody tr:hover {
+  background: #f6f9ff;
+}
+
+/* Mensagem "sem produtos" */
+.sem-produtos {
+  text-align: center;
+  color: #55606a;
+  font-size: 1.05rem;
+  padding: 60px 22px; /* Espaçamento interno */
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+  .estoque-container {
+    padding-top: 80px; /* Menos padding no mobile */
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .estoque-titulo {
+    font-size: 1.6rem;
+    padding: 12px;
+  }
+  .tabela-estoque th,
+  .tabela-estoque td {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  .sem-produtos {
+    padding: 40px 15px;
+  }
+}
