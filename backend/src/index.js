@@ -1,16 +1,19 @@
 import express from "express";
 import cors from "cors";
-import usuariosRoutes from "./routes/usuarios.js";
+import usuariosRouter from "./routes/usuarios.js";
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(cors());
 app.use(express.json());
 
-// Rotas
-app.use("/usuarios", usuariosRoutes);
+app.use("/usuarios", usuariosRouter);
 
-// Porta dinâmica para Render ou localhost
-const PORT = process.env.PORT || 3001;
+app.get("/", (req, res) => {
+  res.send("Backend SmartStock funcionando!");
+});
+
 app.listen(PORT, () => {
-  console.log(`✅ Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
