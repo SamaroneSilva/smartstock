@@ -12,7 +12,7 @@ export default function Login() {
     setError("");
 
     try {
-      const API_URL = "https://smartstock-backend-77sf-es2t.onrender.com";
+      const API_URL = "https://smartstock-back.onrender.com/";
       // const API_URL = "http://localhost:5000"; // 🔧 Usar ao desenvolver localmente
 
       const res = await fetch(`${API_URL}/login`, {
