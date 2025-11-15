@@ -1,19 +1,19 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+
 import usuarioRoutes from "./routes/usuarios.js";
+import authRoutes from "./routes/auth.js"; // <-- IMPORTANDO A ROTA DE LOGIN
 
 const app = express();
 const PORT = process.env.PORT || 10000;
 
-// Permitir requisições de qualquer origem (necessário para o front acessar)
 app.use(cors());
-
-// Middleware
 app.use(bodyParser.json());
 
 // Rotas
-app.use("/", usuarioRoutes);
+app.use("/", authRoutes);       // <-- PRIMEIRO: LOGIN / CADASTRO
+app.use("/usuarios", usuarioRoutes); // <-- DEPOIS: CRUD DE USUÁRIOS
 
 // Rota raiz
 app.get("/", (req, res) => {
